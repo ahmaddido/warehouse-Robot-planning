@@ -56,11 +56,11 @@ def animate_robot(grid, cell_path, job_cell_markers, trail_len=10):
 
     # stations + robot + trails
     for letter, (x, y) in STATIONS.items():
-        ax.scatter(x + 0.5, y + 0.5, c="red", s=120, zorder=5)
-        ax.text(x + 0.5, y + 0.5, letter, color= "white", ha='center', va='center', zorder=6)
+        #ax.scatter(x + 0.5, y + 0.5, c="red", s=120, zorder=5)
+        #ax.text(x + 0.5, y + 0.5, letter, color= "white", ha='center', va='center', zorder=6)
 
-        #ax.scatter(x, y, c="red", s=120, zorder=5)
-        #ax.text(x, y, letter, color= "white", ha='center', va='center', zorder=6)
+        ax.scatter(x, y, c="red", s=120, zorder=5)
+        ax.text(x, y, letter, color= "white", ha='center', va='center', zorder=6)
 
     robot, = ax.plot([], [], 'o', markersize=12, zorder=10)
     trail, = ax.plot([], [], '-', color='orange', linewidth=2, zorder=9)
@@ -69,11 +69,11 @@ def animate_robot(grid, cell_path, job_cell_markers, trail_len=10):
     job_text = ax.text(0.02, 0.98, "", transform=ax.transAxes, va='top', ha='left', zorder=20, fontsize=12, fontweight='bold')
 
     # convert path to x/y arrays
-    xs = [ x + 0.5 for x, y in cell_path]
-    ys = [ y + 0.5 for x, y in cell_path]
+    #xs = [ x + 0.5 for x, y in cell_path]
+    #ys = [ y + 0.5 for x, y in cell_path]
 
-    #xs = [ x for x, y in cell_path]
-    #ys = [ y for x, y in cell_path]
+    xs = [ x for x, y in cell_path]
+    ys = [ y for x, y in cell_path]
 
     marker_idx = 0
     current_job = 0
